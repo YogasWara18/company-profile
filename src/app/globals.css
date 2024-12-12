@@ -1,6 +1,25 @@
 @tailwind base;
+
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @tailwind components;
+
 @tailwind utilities;
+
+/* Header Logo Styles */
+.header-logo {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  filter: brightness(125%);
+}
+
+.header-logo:hover {
+  transform: scale(1.1);
+  filter: brightness(500%);
+  opacity: 0.8;
+}
 
 :root {
   --background: #ffffff;
@@ -18,4 +37,52 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* New class for transparent text */
+.transparent-text {
+  opacity: 0.5; /* Adjust the opacity value as needed */
+  animation: moveText 5s infinite, slideInFromSide 2s ease-in-out forwards;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, color 0.3s;
+}
+
+@keyframes moveText {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInFromSide {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateX(0);
+  }
+}
+
+/* New animation for walking effect */
+/* Animasi walk dihapus */
+
+/* Header Styles */
+header {
+  background: transparent; /* Fully transparent background */
+  color: white;
+  padding: 0.5rem; /* Balanced padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid rgba(0, 0, 0, 0.5); /* Adjusted border size to match logo */
+  height: 60px; /* Reduced height */
+  border-radius: 8px; /* Modern border radius */
 }
